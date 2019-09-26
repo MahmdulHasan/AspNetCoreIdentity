@@ -1,0 +1,20 @@
+﻿@inject SignInManager<User> signInManager;
+@{
+    if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_adminLayout.cshtml";
+    }
+    else if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_studentLayout.cshtml";
+    }
+    else if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+    {
+        Layout = "~/Areas/Admin/Views/Shared/_teacherLayout.cshtml";
+    }
+    else
+    {
+         Layout = "_Layout";
+    }
+   
+}

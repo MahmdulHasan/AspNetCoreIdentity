@@ -1,0 +1,38 @@
+﻿@model CourseViewModel
+@{
+    ViewData["Title"] = "AddCourse";
+}
+
+@section AddCourseStyle{ 
+    <link href="~/css/AdminCourse.css" rel="stylesheet" type="text/css"/>
+
+}
+
+  
+        <div class="d-flex justify-content-center mt-5">
+            <div class="card card-success cardWidth">
+                <div class="card-header">
+                    <h3 class="card-title">Add Course</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form asp-action="AddCourse" method="post">
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control">
+                            <span asp-validation-for="Name" class="form-control-feedback text-danger"></span>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+   
+    
